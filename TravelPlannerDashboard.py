@@ -1,7 +1,7 @@
 import streamlit as st
 st.set_page_config(page_title="SmartTravel - Dashboard", page_icon="👤")
 
-st.title("Your Travel Dashboard")hallo
+st.title("Your Travel Dashboard")
 st.header("My Trip Itinerary")
 
 
