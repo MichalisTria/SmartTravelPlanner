@@ -1,6 +1,9 @@
 import streamlit as st
 st.set_page_config(page_title="SmartTravel - Dashboard", page_icon="👤")
 
+if st.button("Return Home", icon="🏠"):
+    st.switch_page("TravelPlannerDemo.py")
+
 st.title("Your Travel Dashboard") #dashboard title
 st.header("My Trip Itinerary")
 
