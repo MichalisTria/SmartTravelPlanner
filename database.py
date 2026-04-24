@@ -9,7 +9,7 @@ connection.commit()
 
 connection = sqlite3.connect('destinations.db')
 
---- #AI-generated ----------------------------------------------------------------------------
+#AI-generated --------------
 def get_destinations(): 
     conn = sqlite3.connect('destinations.db')
     conn.row_factory = sqlite3.Row
@@ -25,7 +25,7 @@ def get_destinations():
             (dest["id"],) #AI-generated
         )
         tags = cursor.fetchall() 
--------------------------------------------------------------------------------------------------------        
+#-------------------------------------------------------------------------------------------------------        
 #Not AI
 
         styles, interests, activities, accommodations = [], [], [], []
