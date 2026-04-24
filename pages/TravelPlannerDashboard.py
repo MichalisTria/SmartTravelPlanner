@@ -19,7 +19,7 @@ st.header("📅 Trip Overview")
 col1, col2, col3, col4 = st.columns(4)
 with col1:
     st.subheader("Destination:")
-    st.write(destination["name"])  # dynamique
+    st.write(destination["place"])
 with col2:
     travel_duration = st.session_state.preferences.get("travel_duration", 7) if "preferences" in st.session_state else 7
     st.subheader("Duration:")
@@ -29,7 +29,7 @@ with col2:
         st.write(f"{travel_duration} days")
 with col3:
     st.subheader("Country:")
-    st.write(destination["country"])  # dynamique
+    st.write(destination["country"])
 with col4:
     daily_budget = st.session_state.preferences.get("daily_budget", 0) if "preferences" in st.session_state else 0
     st.subheader("Daily Budget:")
