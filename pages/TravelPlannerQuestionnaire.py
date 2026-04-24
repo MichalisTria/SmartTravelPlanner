@@ -74,10 +74,10 @@ activities = st.multiselect("What activities do you enjoy most while traveling?"
 for activity in activities:
     st.write(f"- {activity}")
 
-#Slider Duration
+#Slider Travel Duration
 st.subheader("8. How long would you stay?")
-daily_budget = st.slider("Days", min_value=0, max_value=365, step=1, value=1)
-st.write(f"Your stay would last: {daily_budget}days")
+travel_duration = st.slider("Days", min_value=0, max_value=365, step=1, value=1)
+st.write(f"Your stay would last: {travel_duration}days")
 
 
 #add spacing between buttons and stats with 150px distance (AI generated)
