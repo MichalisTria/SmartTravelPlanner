@@ -41,6 +41,12 @@ st.markdown("<div style='margin-top: 400px;'></div>", unsafe_allow_html=True)
 st.title("Discover Your Way")
 st.subheader("Not sure where to start? Try an alternative way to find your perfect destination:")
 
+if st.button("🎲 Surprise Me!", use_container_width=False):
+    destinations = get_destinations()
+    random_destination = random.choice(destinations)
+    st.session_state.selected_destination = random_destination
+    st.switch_page("pages/TravelPlannerDashboard.py")
+    
 #Code AI generated: Formats icon with a button and description for "Find by Photos" feature, centered with background and square
 st.markdown("""
     <div style='border: 2px solid #6a0dad; border-radius: 14px; padding: 18px; text-align: center; background: #f8f1ff; max-width: 360px; margin: 0 auto;'>
