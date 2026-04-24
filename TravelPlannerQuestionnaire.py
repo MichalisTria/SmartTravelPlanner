@@ -95,7 +95,7 @@ for activity in activities:
 #add spacing between buttons and stats with 150px distance (AI generated)
 st.markdown("<div style='margin-top: 50px;'></div>", unsafe_allow_html=True)
 
-st.button("View Results✔️")
+if st.button("View Results✔️"):
     st.session_state.preferences = { #AI-generated
         "travel_style": travel_style,
         "ideal_climate": ideal_climate,
