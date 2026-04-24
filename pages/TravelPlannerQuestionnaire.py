@@ -1,7 +1,8 @@
 import streamlit as st
 st.set_page_config(page_title="SmartTravel - Questionnaire", page_icon="❓")
 
-import sys #AI-generated
+#AI-generated
+import sys
 sys.path.append('..')
 from recommender import get_recommendations
 
@@ -77,8 +78,9 @@ for activity in activities:
 #add spacing between buttons and stats with 150px distance (AI generated)
 st.markdown("<div style='margin-top: 50px;'></div>", unsafe_allow_html=True)
 
+#AI-generated
 if st.button("View Results✔️"):
-    st.session_state.preferences = { #AI-generated
+    st.session_state.preferences = { 
         "travel_style": travel_style,
         "ideal_climate": ideal_climate,
         "interests": selected_interests,
