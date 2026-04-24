@@ -1,6 +1,10 @@
 import streamlit as st
 st.set_page_config(page_title="SmartTravel - Questionnaire", page_icon="❓")
 
+import sys
+sys.path.append('..')
+from recommender import get_recommendations
+
 #TravelPlanner Questionnaire
 #Everything Here is just for testing purposes
 # Questions and Answers SHOULD BE CHANGED based on Imported Databases
@@ -92,3 +96,14 @@ for activity in activities:
 st.markdown("<div style='margin-top: 50px;'></div>", unsafe_allow_html=True)
 
 st.button("View Results✔️")
+    st.session_state.preferences = { #AI-generated
+        "travel_style": travel_style,
+        "ideal_climate": ideal_climate,
+        "interests": selected_interests,
+        "daily_budget": daily_budget,
+        "activities": activities,
+        "accommodation": accommodation,
+        "travel_pace": travel_pace,
+    }
+    st.session_state.recommendations = get_recommendations(st.session_state.preferences)
+    st.switch_page("pages/TravelPlannerResults.py")
