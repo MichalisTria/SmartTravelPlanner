@@ -1,6 +1,6 @@
 import sqlite3
 
-with open('destinations.sql', 'r') as f:
+with open('destinations.sql', 'r') as f: #according to the slides
     sql_script = f.read()
 
 connection = sqlite3.connect('destinations.db')
@@ -9,7 +9,8 @@ connection.commit()
 
 connection = sqlite3.connect('destinations.db')
 
-def get_destinations(): #AI-generated
+--- #AI-generated ----------------------------------------------------------------------------
+def get_destinations(): 
     conn = sqlite3.connect('destinations.db')
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
@@ -23,7 +24,9 @@ def get_destinations(): #AI-generated
             "SELECT tag_type, tag_value FROM destination_tags WHERE destination_id = ?",
             (dest["id"],) #AI-generated
         )
-        tags = cursor.fetchall() #AI-generated
+        tags = cursor.fetchall() 
+-------------------------------------------------------------------------------------------------------        
+#Not AI
 
         styles, interests, activities, accommodations = [], [], [], []
         for tag in tags:
@@ -52,5 +55,5 @@ def get_destinations(): #AI-generated
             "accommodation": accommodations,
         })
 
-    conn.close()
+    conn.close() #AI-generated
     return result
