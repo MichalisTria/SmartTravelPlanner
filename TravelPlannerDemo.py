@@ -1,4 +1,9 @@
 import streamlit as st
+import streamlit as st
+import random
+import sys
+from database import get_destinations
+
 st.set_page_config(page_title="SmartTravel - Home", page_icon="🌆") #Tab Title & Icon
 
 #Notes: Majority of Markdown Code is AI generated; this formatting looks nicer,
