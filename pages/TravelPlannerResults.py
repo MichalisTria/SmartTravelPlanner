@@ -1,5 +1,5 @@
 import streamlit as st
-from api import get_weather
+from API import get_weather
 
 st.set_page_config(page_title="SmartTravel - Results", page_icon="🎯")
 
@@ -26,16 +26,17 @@ for rank, destination in enumerate(st.session_state.recommendations, 1):
     if weather: 
         col1, col2, col3, col4 = st.columns(4)
         with col1:
-            st.metric("Temperature", f"(weather['temp']}C")
+            st.metric("Temperature", str(weather["temp"]) + "°C")
         with col2:
-            st.metric("Humidity", f"(weather['humidity']}%")
+            st.metric("Humidity", str(weather["humidity"]) + "%")
         with col3:
-            st.metric("Wind Speed", f"{weather['wind_speed']} m/s")
+            st.metric("Wind Speed", str(weather["wind_speed"]) + "m/s")  
         with col4:
-            st.metric("Conditions", weather['description'].capitalize())
+            st.metric("Conditions", weather["description"].capitalize())
 
     if st.button(f"Plan this trip", key=f"btn_{rank}"):
         st.session_state.selected_destination = destination
         st.switch_page("pages/TravelPlannerDashboard.py")
     
     st.markdown("---")
+
